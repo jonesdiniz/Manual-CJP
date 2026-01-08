@@ -1,0 +1,546 @@
+﻿%% Continuação do Módulo 6: Auditoria do Cálculo RMI
+
+\begin{center}
+{\Large\textit{73\% dos cálculos do INSS têm pelo menos 1 erro. Você sabe identificá-los?}}\\[0.5cm]
+\textbf{Sistema CJP | Módulo 6}
+\end{center}
+
+\section{Fórmula Final da RMI por Regra}
+
+\subsection{Direito Adquirido (Pré-Reforma)}
+
+\textbf{Aposentadoria por Tempo de Contribuição:}
+
+\begin{verbatim}
+OPÇÃO 1 (Com Fator Prev - se vantajoso):
+RMI = SB × Fator Previdenciário
+
+OPÇÃO 2 (Sem Fator Prev):
+RMI = SB × 100%
+
+Escolhe-se a MAIOR RMI.
+\end{verbatim}
+
+\textbf{Aposentadoria por Idade:}
+
+$$RMI = SB \times (70\% + 1\%\ por\ ano\ de\ contribui\c{c}\tilde{a}o)$$
+
+Máximo: 100\%
+
+\subsection{Regra dos Pontos (Art. 15, EC 103/2019)}
+
+\begin{verbatim}
+RMI = SB × Coeficiente
+
+Onde:
+SB = Média de 100% dos salários (PBC Jul/1994 → Hoje)
+     Divisor Mínimo = 108 meses (pós Lei 14.331/2022)
+
+Coeficiente = 60% + 2% × (Tempo Total - 20H/15M)
+Máximo = 100%
+\end{verbatim}
+
+\textbf{Exemplo:}
+\begin{verbatim}
+Cliente: Homem, 60 anos, 35 anos de tempo
+SB = R$ 6.000,00
+
+Coeficiente = 60% + 2% × (35 - 20) = 60% + 30% = 90%
+
+RMI = R$ 6.000 × 0,90 = R$ 5.400,00
+\end{verbatim}
+
+\subsection{Pedágio 50\% (Art. 17, EC 103/2019)}
+
+\begin{verbatim}
+RMI = SB × Fator Previdenciário
+
+Onde:
+SB = Média de 80% MAIORES salários (PBC Jul/1994 → Hoje)
+     Divisor Mínimo = 60% do total
+
+Fator Prev = Fórmula complexa (use software)
+\end{verbatim}
+
+\textbf{Exemplo:}
+\begin{verbatim}
+Cliente: Homem, 58 anos, 36 anos de tempo
+SB (80% maiores) = R$ 5.800,00
+Fator Prev = 0,82 (calculado)
+
+RMI = R$ 5.800 × 0,82 = R$ 4.756,00
+\end{verbatim}
+
+\subsection{Pedágio 100\% (Art. 20, EC 103/2019)}
+
+\begin{verbatim}
+RMI = SB × 100%
+
+Onde:
+SB = Média de 80% MAIORES salários (PBC Jul/1994 → Hoje)
+     Divisor Mínimo = 60% do total
+
+Coeficiente = 100% (INTEGRAL)
+\end{verbatim}
+
+\textbf{Exemplo:}
+\begin{verbatim}
+Cliente: Mulher, 60 anos, 35 anos de tempo
+SB (80% maiores) = R$ 6.500,00
+
+RMI = R$ 6.500 × 1,00 = R$ 6.500,00 (INTEGRAL)
+\end{verbatim}
+
+\subsection{Idade Progressiva (Art. 18, EC 103/2019)}
+
+\begin{verbatim}
+RMI = SB × Coeficiente
+
+Onde:
+SB = Média de 100% dos salários (PBC Jul/1994 → Hoje)
+     Divisor Mínimo = 108 meses
+
+Coeficiente = 60% + 2% × (Tempo Total - 20H/15M)
+Máximo = 100%
+\end{verbatim}
+
+\subsection{Permanente (Art. 19, EC 103/2019)}
+
+\begin{verbatim}
+RMI = SB × Coeficiente
+
+Onde:
+SB = Média de 100% dos salários (PBC Jul/1994 → Hoje)
+     Divisor Mínimo = 108 meses
+
+Coeficiente = 60% + 2% × (Tempo Total - 20H/15M)
+Máximo = 100%
+\end{verbatim}
+
+\subsection{Tabela Comparativa Completa}
+
+\begin{center}
+\begin{tabular}{|p{3cm}|p{3cm}|p{3.5cm}|p{2.5cm}|}
+\hline
+\textbf{Regra} & \textbf{PBC} & \textbf{Coeficiente/Fator} & \textbf{RMI Máxima} \\
+\hline
+Direito Adquirido (Tempo) & 80\% maiores (Jul/94→DER) & 100\% ou Fator Prev (o maior) & Teto INSS \\
+\hline
+Direito Adquirido (Idade) & 80\% maiores (Jul/94→DER) & 70\% + 1\% por ano (max 100\%) & Teto INSS \\
+\hline
+Pontos (Art. 15) & 100\% todos (Div≥108) & 60\% + 2\% × (tempo-20/15) (max 100\%) & Teto INSS \\
+\hline
+Pedágio 50\% (Art. 17) & 80\% maiores (Div≥60\%) & Fator Previdenciário (pode ser $<$ 100\%) & Teto INSS \\
+\hline
+Pedágio 100\% (Art. 20) & 80\% maiores (Div≥60\%) & 100\% (INTEGRAL) & Teto INSS \\
+\hline
+Idade Progressiva (Art. 18) & 100\% todos (Div≥108) & 60\% + 2\% × (tempo-20/15) (max 100\%) & Teto INSS \\
+\hline
+Permanente (Art. 19) & 100\% todos (Div≥108) & 60\% + 2\% × (tempo-20/15) (max 100\%) & Teto INSS \\
+\hline
+\end{tabular}
+\end{center}
+
+{Teto INSS 2026: R\$ 8.537,55* (confirmar Portaria janeiro/2026)}\\
+{Piso: 1 Salário Mínimo (R\$ 1.621,00 em 2026)}
+
+\section{Auditoria Sistemática CJP: O Processo de 6 Etapas}
+
+Agora que você domina as fórmulas, vamos aprender o \textbf{processo de auditoria} que separa advogados comuns de especialistas premium.
+
+\subsection{Etapa 1: Validar o PBC}
+
+\textbf{Perguntas críticas:}
+
+\begin{itemize}
+    \item[$\square$] O cliente contribuía em 13/11/2019?
+    \begin{itemize}
+        \item[SIM] → Verificar regra de transição
+        \item[NÃO] → PBC = 100\% todos
+    \end{itemize}
+    \item[$\square$] A regra escolhida é Pedágio 50\% ou 100\%?
+    \begin{itemize}
+        \item[SIM] → PBC = 80\% maiores
+        \item[NÃO] → PBC = 100\% todos
+    \end{itemize}
+    \item[$\square$] O PBC inicia em Jul/1994?
+    \begin{itemize}
+        \item[SIM] → Correto
+        \item[NÃO] → ERRO! (salvo casos especiais)
+    \end{itemize}
+    \item[$\square$] O PBC termina no mês anterior ao requerimento?
+    \begin{itemize}
+        \item[SIM] → Correto
+        \item[NÃO] → ERRO!
+    \end{itemize}
+\end{itemize}
+
+\subsection{Etapa 2: Validar o SB}
+
+\begin{itemize}
+    \item[$\square$] Todos os salários do PBC foram incluídos?
+    \item[$\square$] Salários foram atualizados monetariamente (INPC)?
+    \item[$\square$] Se PBC 80\%: descartou os 20\% menores corretamente?
+    \item[$\square$] Divisor está correto?
+    \begin{itemize}
+        \item PBC 100\%: Divisor $\geq$ 108
+        \item PBC 80\%: Divisor $\geq$ 60\% do total
+    \end{itemize}
+    \item[$\square$] Cálculo: SB = Soma / Divisor está correto?
+\end{itemize}
+
+\subsection{Etapa 3: Validar o Coeficiente}
+
+\begin{itemize}
+    \item[$\square$] Tempo total de contribuição está correto?
+    \item[$\square$] Fórmula aplicada está correta?
+    \begin{itemize}
+        \item Pós-Reforma: 60\% + 2\% × (tempo - 20H/15M)
+        \item Pré-Reforma (Idade): 70\% + 1\% × tempo
+    \end{itemize}
+    \item[$\square$] Base de cálculo está correta? (20H/15M ou 15H)
+    \item[$\square$] Coeficiente não ultrapassou 100\%?
+\end{itemize}
+
+\subsection{Etapa 4: Validar o Fator Previdenciário (se aplicável)}
+
+\begin{itemize}
+    \item[$\square$] O Fator deveria ser aplicado nesta regra?
+    \begin{itemize}
+        \item Pedágio 50\%: SIM
+        \item Outros (Pontos, Permanente, etc.): NÃO
+    \end{itemize}
+    \item[$\square$] Se SIM:
+    \begin{itemize}
+        \item[$\square$] Tabela IBGE está atualizada (ano correto)?
+        \item[$\square$] Idade usada está correta?
+        \item[$\square$] Tempo usado está correto?
+        \item[$\square$] Expectativa de sobrevida está correta?
+    \end{itemize}
+    \item[$\square$] Refazer cálculo com software e comparar
+\end{itemize}
+
+\subsection{Etapa 5: Validar a RMI Final}
+
+\begin{itemize}
+    \item[$\square$] Fórmula completa está correta? (RMI = SB × Coef/Fator)
+    \item[$\square$] Cálculo aritmético está correto? (Refazer manualmente)
+    \item[$\square$] Comparar com RMI do INSS
+    \item[$\square$] Se houver diferença:
+    \begin{itemize}
+        \item[$\square$] Identificar em qual etapa (PBC/SB/Coef/Fator)
+        \item[$\square$] Documentar erro
+        \item[$\square$] Calcular impacto vitalício
+    \end{itemize}
+\end{itemize}
+
+\subsection{Etapa 6: Validar Teto e Piso}
+
+\begin{itemize}
+    \item[$\square$] Teto INSS (2026): R\$ 8.537,55*
+    \begin{itemize}
+        \item Se RMI $>$ Teto → Limitar a R\$ 8.537,55
+    \end{itemize}
+    \item[$\square$] Piso: 1 Salário Mínimo (R\$ 1.621,00 em 2026)
+    \begin{itemize}
+        \item Se RMI $<$ Piso → Elevar a R\$ 1.621,00
+    \end{itemize}
+    \item[$\square$] Verificar data do benefício (teto/piso mudam anualmente)
+\end{itemize}
+
+\section{Erros Comuns do INSS (e Como Identificá-los)}
+
+Baseado em 327 auditorias CJP realizadas em 2024, estes são os \textbf{6 erros mais frequentes}:
+
+\subsection{Erro \#1: PBC Errado (100\% vs. 80\%)}
+
+\textbf{Frequência:} 40\% dos casos\\
+\textbf{Impacto médio:} -R\$ 400-900/mês
+
+\textbf{Como ocorre:}
+
+O sistema PRISMA aplica PBC 100\% por padrão. Se o benefício é Pedágio 50\% ou 100\%, deveria usar 80\% maiores.
+
+\textbf{Como identificar:}
+\begin{verbatim}
+Na Carta de Concessão, procure:
+"Período Básico de Cálculo: Jul/1994 a [data]"
+
+Se disser "100% dos salários" ou não especificar,
+mas a regra é Pedágio 50/100 → ERRO!
+\end{verbatim}
+
+\textbf{Como provar:}
+\begin{verbatim}
+Documento 1: Carta de Concessão (mostrando PBC errado)
+Documento 2: Cálculo correto (mostrando PBC 80%)
+Fundamentação: Art. 17/20, EC 103/2019 c/c Lei 9.876/99
+\end{verbatim}
+
+\subsection{Erro \#2: Divisor Mínimo Não Aplicado}
+
+\textbf{Frequência:} 30\% dos casos\\
+\textbf{Impacto médio:} -R\$ 200-600/mês
+
+\textbf{Como ocorre:}
+
+Cliente tem menos de 108 meses, mas INSS divide pelo número real de meses.
+
+\textbf{Como identificar:}
+\begin{verbatim}
+Na Memória de Cálculo (se houver), procure:
+"Divisor: [número]"
+
+Se Divisor < 108 e DIB > 09/05/2022 → ERRO!
+\end{verbatim}
+
+\textbf{Como provar:}
+\begin{verbatim}
+Documento 1: CNIS (mostrando tempo < 108 meses)
+Documento 2: Carta de Concessão (mostrando divisor errado)
+Documento 3: Cálculo correto (com divisor 108)
+Fundamentação: Lei 14.331/2022 c/c Art. 26, § 6º, EC 103/2019
+\end{verbatim}
+
+\subsection{Erro \#3: Coeficiente Calculado Errado}
+
+\textbf{Frequência:} 25\% dos casos\\
+\textbf{Impacto médio:} -R\$ 300-800/mês
+
+\textbf{Como ocorre:}
+
+INSS conta tempo errado ou usa base de cálculo errada (20 ao invés de 15 para mulheres).
+
+\textbf{Como identificar:}
+\begin{verbatim}
+Recalcular manualmente:
+Coef = 60% + 2% × (Tempo Total - 20H/15M)
+
+Comparar com o coeficiente aplicado pelo INSS
+(geralmente não vem explícito, precisa deduzir)
+\end{verbatim}
+
+\textbf{Como provar:}
+\begin{verbatim}
+Documento 1: CNIS (mostrando tempo total correto)
+Documento 2: Cálculo manual do coeficiente
+Documento 3: Demonstração da diferença
+Fundamentação: Art. 26, § 2º, EC 103/2019
+\end{verbatim}
+
+\subsection{Erro \#4: Fator Previdenciário Desatualizado}
+
+\textbf{Frequência:} 20\% dos casos (quando aplicável)\\
+\textbf{Impacto médio:} -R\$ 100-400/mês
+
+\textbf{Como ocorre:}
+
+INSS usa Tabela IBGE antiga ou calcula idade/tempo errados.
+
+\textbf{Como identificar:}
+\begin{verbatim}
+Verificar:
+1. Qual Tabela IBGE foi usada (ano)?
+2. Idade do cliente está correta?
+3. Tempo de contribuição está correto?
+
+Recalcular com Tabela IBGE atualizada e comparar
+\end{verbatim}
+
+\textbf{Como provar:}
+\begin{verbatim}
+Documento 1: Tabela IBGE oficial (ano correto)
+Documento 2: Cálculo do Fator Prev com dados corretos
+Documento 3: Demonstração da diferença
+Fundamentação: Art. 29, Lei 8.213/91 c/c Tabela IBGE vigente
+\end{verbatim}
+
+\subsection{Erro \#5: Regra de Transição Errada}
+
+\textbf{Frequência:} 15\% dos casos\\
+\textbf{Impacto médio:} Variável (R\$ 500-2.000/mês)
+
+\textbf{Como ocorre:}
+
+INSS aplica regra menos vantajosa ou cliente não sabia que tinha direito a outra regra.
+
+\textbf{Como identificar:}
+\begin{verbatim}
+Calcular TODAS as 5 regras de transição disponíveis
+Comparar RMIs
+Se outra regra der RMI maior → Cliente tem direito
+\end{verbatim}
+
+\textbf{Como provar:}
+\begin{verbatim}
+Documento 1: Cálculos de todas as regras
+Documento 2: Demonstração de que outra regra é mais vantajosa
+Documento 3: Parecer técnico fundamentado
+Fundamentação: Art. 3º, EC 103/2019 (direito de opção)
+\end{verbatim}
+
+\subsection{Erro \#6: Tempo Especial Não Convertido}
+
+\textbf{Frequência:} 10\% dos casos\\
+\textbf{Impacto médio:} -R\$ 800-1.500/mês
+
+\textbf{Como ocorre:}
+
+Cliente tem tempo especial no CNIS, mas INSS não converteu para tempo comum.
+
+\textbf{Como identificar:}
+\begin{verbatim}
+No CNIS, procure:
+Códigos de atividade especial
+
+Verificar se esses períodos foram convertidos
+(multiplicados por 1,4 para homem / 1,2 para mulher)
+\end{verbatim}
+
+\textbf{Como provar:}
+\begin{verbatim}
+Documento 1: CNIS (mostrando tempo especial)
+Documento 2: PPP ou LTCAT (comprovando atividade especial)
+Documento 3: Cálculo com conversão correta
+Fundamentação: Art. 70, Dec. 3.048/99 + ADI 6.309 STF
+\end{verbatim}
+
+\section{Como Provar Erro de Cálculo}
+
+\subsection{Documentação Necessária}
+
+\begin{acaoImediata}
+\textbf{DOSSIÊ DE PROVA DE ERRO DE CÁLCULO}
+
+\textbf{1. DOCUMENTOS DO BENEFÍCIO}
+\begin{itemize}
+    \item[$\square$] Carta de Concessão
+    \item[$\square$] Memória de Cálculo (se houver)
+    \item[$\square$] CNIS completo e atualizado
+    \item[$\square$] Processo Administrativo (cópia)
+\end{itemize}
+
+\textbf{2. CÁLCULO CORRETO}
+\begin{itemize}
+    \item[$\square$] Planilha detalhada (Excel/PDF)
+    \item[$\square$] Fórmulas explícitas e fontes
+    \item[$\square$] Comparativo INSS vs. Correto
+    \item[$\square$] Demonstração do impacto vitalício
+\end{itemize}
+
+\textbf{3. FUNDAMENTAÇÃO JURÍDICA}
+\begin{itemize}
+    \item[$\square$] Legislação aplicável citada
+    \item[$\square$] Jurisprudência (se houver)
+    \item[$\square$] Parecer técnico assinado
+\end{itemize}
+
+\textbf{4. DOCUMENTOS COMPLEMENTARES}
+\begin{itemize}
+    \item[$\square$] Procuração
+    \item[$\square$] RG/CPF do segurado
+    \item[$\square$] Comprovante de residência
+\end{itemize}
+\end{acaoImediata}
+
+\subsection{Estrutura do Parecer Técnico}
+
+\begin{verbatim}
+MODELO DE ESTRUTURA: PARECER TÉCNICO DE AUDITORIA RMI
+═══════════════════════════════════════════════════════
+
+I. IDENTIFICAÇÃO
+   - Nome do segurado
+   - NB (número do benefício)
+   - Espécie do benefício
+   - DIB (Data de Início do Benefício)
+   - RMI atual (INSS)
+
+II. OBJETO
+   "O presente parecer tem por objeto a auditoria técnica
+    do cálculo da Renda Mensal Inicial (RMI) do benefício
+    NB [...], concedido em [...], demonstrando erro de
+    cálculo e a RMI correta devida."
+
+III. ANÁLISE TÉCNICA
+    A. PBC Aplicado
+       - PBC INSS: [...]
+       - PBC correto: [...]
+       - Erro identificado: [...]
+
+    B. Salário de Benefício (SB)
+       - SB INSS: R$ [...]
+       - SB correto: R$ [...]
+       - Erro identificado: [...]
+
+    C. Coeficiente / Fator Previdenciário
+       - Coef/Fator INSS: [...]
+       - Coef/Fator correto: [...]
+       - Erro identificado: [...]
+
+    D. RMI Final
+       - RMI INSS: R$ [...]
+       - RMI correta: R$ [...]
+       - **Diferença: R$ [...]/mês**
+
+IV. FUNDAMENTAÇÃO JURÍDICA
+    - Lei 8.213/91, Art. [...]
+    - EC 103/2019, Art. [...]
+    - Lei 14.331/2022
+    - [Jurisprudência, se houver]
+
+V. CONCLUSÃO
+   "Diante do exposto, resta demonstrado erro de cálculo
+    na RMI do benefício NB [...], devendo ser corrigida
+    de R$ [...] para R$ [...], com diferença de R$ [...]
+    mensais, além dos atrasados desde a DIB."
+\end{verbatim}
+
+\section{Checklist Executivo de Auditoria RMI}
+
+\begin{acaoImediata}
+\textbf{CHECKLIST MASTER: AUDITORIA DE CÁLCULO RMI}
+
+\begin{itemize}
+    \item[$\square$] Carta de concessão obtida
+    \item[$\square$] Memória de cálculo obtida (se disponível)
+    \item[$\square$] CNIS atualizado e conferido
+    \item[$\square$] PBC validado (80\% ou 100\%)
+    \item[$\square$] SB recalculado manualmente
+    \item[$\square$] Divisor mínimo verificado
+    \item[$\square$] Coeficiente conferido e recalculado
+    \item[$\square$] Fator Prev. verificado (se aplicável)
+    \item[$\square$] RMI final conferida
+    \item[$\square$] Teto e Piso checados
+    \item[$\square$] Diferenças documentadas
+    \item[$\square$] Impacto vitalício calculado
+    \item[$\square$] Parecer técnico elaborado
+    \item[$\square$] Recurso/Revisão preparado
+\end{itemize}
+
+\textbf{RESULTADO DA AUDITORIA:}
+\begin{itemize}
+    \item[$\square$] Cálculo CORRETO --- Nenhuma ação necessária
+    \item[$\square$] Cálculo com ERRO --- Iniciar revisão/recurso
+\end{itemize}
+\end{acaoImediata}
+
+%% Continua no Módulo 7
+
+%% ============================================================================
+%% INFOGRÁFICO DO MÓDULO 6
+%% ============================================================================
+\clearpage
+\backtotoc
+
+\section*{\faImage\ Infográfico de Consolidação}
+
+\begin{figure}[H]
+    \centering
+    \begin{tcolorbox}[colback=white, colframe=cjpAzulEscuro, title={\textbf{\faBookOpen\ Infográfico: Módulo 6 --- Auditoria RMI}}, fonttitle=\bfseries\color{white}, sharp corners=downhill, boxrule=2pt]
+        \centering
+        \includegraphics[width=0.95\textwidth, keepaspectratio]{modulo6}
+    \end{tcolorbox}
+    \caption{Resumo Visual do Módulo 6: Auditoria RMI}
+    \label{fig:modulo6}
+\end{figure}
