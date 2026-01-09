@@ -1,0 +1,507 @@
+
+%% Continuação do Módulo 7: Benefícios Não Programáveis
+
+\begin{center}
+{\Large\textit{Benefícios Não Programáveis: Auxílio Temporário, AIP e Checklists}}\\[0.5cm]
+\textbf{Sistema CJP | Módulo 7}
+\end{center}
+
+\section{Auxílio por Incapacidade Temporária}
+
+\subsection{O Que É o Auxílio Temporário?}
+
+O \textbf{Auxílio por Incapacidade Temporária} (antigo ``auxílio-doença'') é o benefício pago ao segurado que fica \textbf{temporariamente incapaz} de trabalhar por doença ou acidente.
+
+\textbf{Características principais:}
+\begin{itemize}
+    \item Benefício \textbf{temporário} (até recuperação)
+    \item Carência: \textbf{12 meses} (regra geral)
+    \item Empresa paga os \textbf{primeiros 15 dias}
+    \item INSS paga a partir do \textbf{16\textsuperscript{o} dia}
+    \item Exige \textbf{perícia médica} para concessão e prorrogação
+\end{itemize}
+
+\subsection{Cálculo do SB com ``Subteto''}
+
+O cálculo do Auxílio por Incapacidade Temporária usa uma regra especial: o \textbf{``Subteto''}.
+
+\begin{conceitoChave}
+\textbf{REGRA DO SUBTETO}
+
+O Salário de Benefício (SB) do Auxílio é o \textbf{MENOR} entre:
+\begin{itemize}
+    \item \textbf{Média A:} Media de TODOS os salários do PBC (Jul/1994 $\rightarrow$ DER)
+    \item \textbf{Média B:} Média dos 12 ÚLTIMOS salários de contribuição
+\end{itemize}
+
+$$SB = MIN(M\acute{e}dia\ A,\ M\acute{e}dia\ B)$$
+\end{conceitoChave}
+
+\textbf{Por que isso existe?}
+
+Para evitar que segurados que contribuíram pouco ao longo da vida façam ``contribuições de última hora'' altas para aumentar o benefício.
+
+\subsection{Cálculo da RMI}
+
+$$RMI = SB \times 91\%$$
+
+\textbf{Por que 91\%?}
+
+\begin{itemize}
+    \item Para desincentivar fraudes (se fosse 100\%, haveria incentivo para ``ficar doente'')
+    \item Para equilibrar custo previdenciário
+    \item Para manter diferença vs. aposentadoria
+\end{itemize}
+
+É uma ``punição simbólica'' que na prática representa apenas -9\%.
+
+\subsection{Exemplos Práticos}
+
+\subsubsection{Caso A: Afastamento Simples}
+
+\begin{estrategiaCJP}
+\textbf{SEGURADA: Marta (Professora CLT)}
+
+\textbf{SITUAÇO:}
+\begin{itemize}
+    \item Fraturou a perna em acidente
+    \item Ficará afastada 90 dias (3 meses)
+    \item Salário atual: R\$ 4.500,00/mês
+\end{itemize}
+
+\textbf{CÁLCULO:}
+\begin{verbatim}
+Média histórica (15 anos): R$ 3.800
+Média 12 últimos: R$ 4.400
+MENOR: R$ 3.800
+SB: R$ 3.800
+RMI: R$ 3.800 x 91% = R$ 3.458,00
+\end{verbatim}
+(Nota: Usei x minúsculo no verbatim para garantir compatibilidade se o verbatim não aceitar $\times$, mas fora dele é $\times$)
+\textbf{PERÍODO:}
+\begin{itemize}
+    \item Primeiros 15 dias: Empresa paga salário integral
+    \item A partir do 16\textsuperscript{o} dia: INSS paga R\$ 3.458,00
+    \item Total INSS: 75 dias
+\end{itemize}
+\end{estrategiaCJP}
+
+\subsubsection{Caso B: Afastamento Longo com Prorrogações}
+
+\begin{verbatim}
+SEGURADO: João (Metalúrgico)
+
+SITUAÇO:
+• Hérnia de disco (cirurgia + fisioterapia)
+• Afastamento inicial: 60 dias
+• Prorrogação 1: +60 dias
+• Prorrogação 2: +60 dias
+• Total: 180 dias (6 meses)
+
+CÁLCULO:
+• Média histórica (20 anos): R$ 5.200
+• Média 12 últimos: R$ 5.800
+• MENOR: R$ 5.200
+• SB: R$ 5.200
+• RMI: R$ 5.200 x 91% = R$ 4.732,00
+
+PERÍCIA:
+• Inicial (30 dias): Concedido 60 dias
+• Perícia 1 (60 dias): Prorrogado +60
+• Perícia 2 (120 dias): Prorrogado +60
+• Perícia 3 (180 dias): ALTA MÉDICA (apto)
+
+VALOR TOTAL RECEBIDO:
+• R$ 4.732 x 6 = R$ 28.392
+\end{verbatim}
+
+\subsection{Armadilhas Comuns}
+
+\begin{armadilha}
+\textbf{ARMADILHA \#1: Calcular SB Errado (Não Usar o Menor)}
+
+\textbf{Problema:} INSS às vezes erra e usa só a média dos 12 últimos (favorecendo quem contribuiu alto recentemente)
+
+\textbf{Impacto:} SB maior do que deveria
+
+\textbf{Solução:} Se for favorável ao segurado, não corrigir! Se prejudicar, recalcular e revisar.
+\end{armadilha}
+
+\begin{armadilha}
+\textbf{ARMADILHA \#2: Confundir com Aposentadoria por Invalidez}
+
+\textbf{Problema:} Cliente acha que vai receber para sempre
+
+\textbf{Impacto:} Frustração quando recebe alta médica
+
+\textbf{Solução:} Explicar CLARAMENTE que é benefício TEMPORÁRIO
+\end{armadilha}
+
+\begin{armadilha}
+\textbf{ARMADILHA \#3: Empresa Não Pagar os 15 Primeiros Dias}
+
+\textbf{Problema:} Empresa alega que é responsabilidade do INSS
+
+\textbf{Impacto:} Trabalhador fica 15 dias sem receber nada
+
+\textbf{Solução:} Art. 60, \S 3\textsuperscript{o}, Lei 8.213/91 $\rightarrow$ Empresa DEVE pagar (se não pagar, ação trabalhista)
+\end{armadilha}
+
+\subsection{Checklist de Auditoria Auxílio Temporário}
+
+\begin{acaoImediata}
+\textbf{CHECKLIST --- AUXÍLIO TEMPORÁRIO}
+
+\textbf{REQUISITOS BÁSICOS}
+\begin{itemize}
+    \item[$\square$] Tem 12 meses de carência?
+    \item[$\square$] Está incapaz temporariamente?
+    \item[$\square$] Passou por perícia médica?
+\end{itemize}
+
+\textbf{CÁLCULO DO SB}
+\begin{itemize}
+    \item[$\square$] Média histórica (PBC) calculada?
+    \item[$\square$] Média dos 12 últimos calculada?
+    \item[$\square$] Usou o MENOR entre as duas?
+\end{itemize}
+
+\textbf{CÁLCULO DA RMI}
+\begin{itemize}
+    \item[$\square$] RMI = SB $\times$ 91\%?
+    \item[$\square$] Valor confere?
+\end{itemize}
+
+\textbf{PERÍODO}
+\begin{itemize}
+    \item[$\square$] Primeiros 15 dias pagos pela empresa?
+    \item[$\square$] INSS paga a partir do 16\textsuperscript{o} dia?
+    \item[$\square$] Perícia está agendada?
+\end{itemize}
+
+\textbf{DOCUMENTAÇO}
+\begin{itemize}
+    \item[$\square$] Atestado médico
+    \item[$\square$] Exames comprobatórios
+    \item[$\square$] Carta de concessão (se já pediu)
+    \item[$\square$] Agendamento de perícia
+\end{itemize}
+\end{acaoImediata}
+
+\section{Tema 1300 STF --- Tese REJEITADA (Registro Histórico)}
+
+\begin{novidade}
+\textbf{RESULTADO FINAL DO JULGAMENTO (Dez/2025)}
+
+\textbf{PLACAR: 6 $\times$ 5 pela CONSTITUCIONALIDADE (Tese REJEITADA)}
+
+\textbf{PELA CONSTITUCIONALIDADE (vencedora):}
+\begin{itemize}
+    \item Luís Roberto Barroso (relator)
+    \item Cristiano Zanin
+    \item André Mendonça
+    \item Nunes Marques
+    \item Gilmar Mendes
+    \item Luiz Fux
+\end{itemize}
+
+\textbf{PELA INCONSTITUCIONALIDADE (vencida):}
+\begin{itemize}
+    \item Flávio Dino
+    \item Edson Fachin
+    \item Alexandre de Moraes
+    \item Dias Toffoli
+    \item Cármen Lúcia
+\end{itemize}
+
+\textbf{RESULTADO:} Regra de 60\%+2\% PERMANECE VIGENTE
+\end{novidade}
+
+\subsection{O ``Paradoxo da Incapacidade'' --- Mantido pela Decisão}
+
+O Min. Flávio Dino, em voto vencido, destacou o problema que permanece:
+
+\begin{armadilha}
+\textbf{REGRA MANTIDA (EC 103/2019):}
+
+\begin{itemize}
+    \item Auxílio por Incapacidade Temporária: 91\% da média
+    \item Aposentadoria por Incap. Permanente (comum): 60\% + 2\%
+\end{itemize}
+
+\textbf{O ``PARADOXO'' PERMANECE:}
+
+A piora clínica ainda pode gerar REDUÇO de renda. Um segurado pode ter AIT de R\$ 4.550,00 e, ao piorar para incapacidade permanente, receber AIP de apenas R\$ 3.000,00.
+
+\textbf{ESTRATÉGIA ÚNICA PARA 100\%:} Demonstrar NEXO CAUSAL (converter para B92 --- AIP Acidentária)
+\end{armadilha}
+
+\subsection{Tabela de Coeficientes Vigente}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Tipo de AIP} & \textbf{Coeficiente VIGENTE} \\
+\hline
+AIP Acidentária (B92) & 100\% \\
+\hline
+AIP Comum --- não acidentária (B32) & 60\% + 2\% (mín. 60\%) \\
+\hline
+AIP com DII antes 13/11/2019 & 100\% (direito adquirido) \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{ATENÇO:} A tese de 100\% para AIP comum foi REJEITADA. NÃO há revisão disponível com base no Tema 1300.
+
+\subsection{Estratégia Alternativa: Nexo Causal (B32 $\rightarrow$ B92)}
+
+A \textbf{única via para obter 100\%} é demonstrar origem ocupacional da doença.
+
+\begin{teseRevisional}
+\textbf{CONVERSÃO DE ESPÉCIE}
+
+\textbf{OBJETIVO:}
+Converter AIP comum (B32) em AIP acidentária (B92) = 100\%
+
+\textbf{FERRAMENTAS:}
+\begin{itemize}
+    \item NTEP (presunção legal CID + CNAE)
+    \item CAT emitida
+    \item Prova pericial técnica
+\end{itemize}
+
+\textbf{DOENÇAS COM POTENCIAL:}
+\begin{itemize}
+    \item Dorsalgias (M54) --- Construção
+    \item LER/DORT (M65) --- Bancos
+    \item Depressão (F32) --- Telemarketing
+\end{itemize}
+\end{teseRevisional}
+
+\begin{acaoImediata}
+\textbf{CHECKLIST --- NEXO CAUSAL}
+
+\begin{itemize}
+    \item[$\square$] Cliente tem AIP comum (B32)?
+    \item[$\square$] Coeficiente $<$ 100\%?
+    \item[$\square$] Doença pode ter relação laboral?
+    \item[$\square$] Verificar NTEP (CID + CNAE)
+    \item[$\square$] Existe CAT?
+    \item[$\square$] PPP indica riscos?
+\end{itemize}
+
+\textbf{SE NTEP:} Requerer conversão administrativamente\\
+\textbf{SE NÃO:} Ação judicial com perícia
+\end{acaoImediata}
+
+\section{Diferenças Estruturais: Aposentadorias vs. Não Programáveis}
+
+\begin{center}
+\begin{tabular}{|p{2.5cm}|p{3cm}|p{5.5cm}|}
+\hline
+\textbf{Aspecto} & \textbf{Aposentadoria} & \textbf{Pensão/Sal-Mat/Auxílio} \\
+\hline
+Planejamento & POSSÍVEL (escolhe quando) & IMPOSSÍVEL (evento externo) \\
+\hline
+Cálculo SB & PBC 80\% ou 100\% + Divisor Mínimo & Varia por tipo \\
+\hline
+Coeficiente & 60\% + 2\% por ano & Varia (50\%+10\%/91\%/100\%) \\
+\hline
+Duração & VITALÍCIO & Varia (vitalício/dias/até recuperação) \\
+\hline
+Carência & 180 meses & Zero a 12 meses \\
+\hline
+Fator Prev. & Só Pedágio 50\%/Dir. Adq. & NUNCA \\
+\hline
+Divisor Mín. & 108 meses (pós-05/2022) & NÃO se aplica \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{armadilha}
+\textbf{ERRO \#1: Aplicar Divisor Mínimo em Pensão}
+
+\textbf{ERRADO:} ``A pensão foi concedida em 2023, então o divisor mínimo de 108 se aplica.''
+
+\textbf{CORRETO:} Divisor mínimo é EXCLUSIVO de aposentadorias. Pensão usa a base da aposentadoria do falecido (se ele era aposentado) ou 100\% da média (se não).
+\end{armadilha}
+
+\begin{armadilha}
+\textbf{ERRO \#2: Aplicar Coeficiente 60\%+2\% em Pensão}
+
+\textbf{ERRADO:} ``A viúva tem 35 anos de contribuição, então o coeficiente da pensão é 60\% + 30\% = 90\%.''
+
+\textbf{CORRETO:} O coeficiente da pensão depende do NÚMERO DE DEPENDENTES, não do tempo de contribuição. Fórmula: 50\% + 10\% por dependente.
+\end{armadilha}
+
+\section{Fluxograma de Decisão: Qual Benefício?}
+
+Use este fluxograma para identificar rapidamente qual benefício não programável se aplica em cada situação:
+
+\begin{estrategiaCJP}
+\textbf{ÁRVORE DE DECISÃO INICIAL}
+
+\textbf{SITUAÇO DO SEGURADO:}
+\begin{itemize}
+    \item Segurado \textbf{FALECEU}? $\rightarrow$ \textbf{PENSÃO POR MORTE}
+    \item Segurada \textbf{DEU À LUZ / ADOTOU}? $\rightarrow$ \textbf{SALÁRIO-MATERNIDADE}
+    \item Segurado \textbf{INCAPACITADO}? $\rightarrow$ Verificar tipo de incapacidade
+    \begin{itemize}
+        \item Incapacidade \textbf{TEMPORÁRIA} $\rightarrow$ \textbf{Auxílio por Incapacidade Temporária}
+        \item Incapacidade \textbf{PERMANENTE} $\rightarrow$ \textbf{Aposentadoria por Invalidez}
+    \end{itemize}
+\end{itemize}
+\end{estrategiaCJP}
+
+\begin{conceitoChave}
+\textbf{DECISÃO: PENSÃO POR MORTE}
+
+\textbf{Data do óbito $<$ 13/11/2019?}
+\begin{itemize}
+    \item \textbf{SIM} $\rightarrow$ Regra antiga (100\% rateado entre dependentes)
+    \item \textbf{NÃO} $\rightarrow$ Regra EC 103/2019:
+    \begin{itemize}
+        \item Há dependente inválido/deficiente grave?
+        \begin{itemize}
+            \item SIM $\rightarrow$ Coeficiente = \textbf{100\%}
+            \item NÃO $\rightarrow$ Coeficiente = \textbf{50\% + 10\% por dependente}
+        \end{itemize}
+        \item Óbito após 13/03/2025?
+        \begin{itemize}
+            \item Menor sob guarda judicial $\rightarrow$ \textbf{CONTA como dependente} (Lei 15.108)
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+\end{conceitoChave}
+
+\begin{conceitoChave}
+\textbf{DECISÃO: SALÁRIO-MATERNIDADE}
+
+\textbf{Categoria da segurada?}
+\begin{itemize}
+    \item \textbf{CLT} $\rightarrow$ RMI = Salário integral (ou média 6 meses se variável)
+    \item \textbf{Doméstica} $\rightarrow$ RMI = Último salário-de-contribuição
+    \item \textbf{Autônoma/MEI} $\rightarrow$ RMI = Média 12 últimas contribuições $\div$ 12
+    \item \textbf{Especial Rural} $\rightarrow$ RMI = 1 salário mínimo (R\$ 1.518,00)
+\end{itemize}
+
+\textbf{Pedido após 05/04/2024?}
+\begin{itemize}
+    \item Carência = \textbf{ZERO} (IN 188/2025)
+\end{itemize}
+
+\textbf{Internação $>$ 14 dias?}
+\begin{itemize}
+    \item Prorrogação: Internação + 120 dias (Lei 15.222/2025)
+\end{itemize}
+\end{conceitoChave}
+
+\begin{conceitoChave}
+\textbf{DECISÃO: INCAPACIDADE}
+
+\textbf{Perícia médica atesta:}
+
+\textbf{Incapacidade TEMPORÁRIA:}
+\begin{itemize}
+    \item $\rightarrow$ Auxílio por Incapacidade Temporária
+    \item SB = MENOR entre (Média 100\% PBC, Média 12 últimos)
+    \item RMI = SB $\times$ 91\%
+    \item Duração: Até alta médica
+\end{itemize}
+
+\textbf{Incapacidade PERMANENTE/TOTAL:}
+\begin{itemize}
+    \item $\rightarrow$ Aposentadoria por Invalidez
+    \item Cálculo igual a aposentadoria comum
+    \item Exceção: Se acidente de trabalho ou doença grave da lista $\rightarrow$ \textbf{100\%}
+\end{itemize}
+\end{conceitoChave}
+
+\section{Checklist Executivo Unificado}
+
+\begin{acaoImediata}
+\textbf{CHECKLIST MASTER --- TODOS OS BENEFÍCIOS NÃO PROGRAMÁVEIS}
+
+\textbf{1. IDENTIFICAÇO DO BENEFÍCIO}
+\begin{itemize}
+    \item[$\square$] Qual benefício? (Pensão / Sal-Mat / Auxílio)
+    \item[$\square$] Data do evento (óbito / parto / afastamento)
+    \item[$\square$] DER (Data de Entrada do Requerimento)
+    \item[$\square$] DIB (Data de Início do Benefício)
+\end{itemize}
+
+\textbf{2. PENSÃO POR MORTE}
+\begin{itemize}
+    \item[$\square$] Data do óbito: \_\_\_\_\_\_
+    \item[$\square$] Regra aplicável: ( ) Pré-Reforma ( ) Pós-Reforma
+    \item[$\square$] Falecido era aposentado? ( ) Sim ( ) Não
+    \item[$\square$] Número de dependentes: \_\_\_
+    \item[$\square$] Menor sob guarda? (Lei 15.108) ( ) Sim ( ) Não
+    \item[$\square$] Dependente deficiente? ( ) Sim ( ) Não
+    \item[$\square$] Coeficiente calculado: \_\_\_\_\%
+    \item[$\square$] RMI final: R\$ \_\_\_\_\_\_
+\end{itemize}
+
+\textbf{3. SALÁRIO-MATERNIDADE}
+\begin{itemize}
+    \item[$\square$] Data do parto/adoção: \_\_\_\_\_\_
+    \item[$\square$] Categoria: ( ) CLT ( ) Doméstica ( ) Autônoma ( ) Especial
+    \item[$\square$] RMI calculada: R\$ \_\_\_\_\_\_
+    \item[$\square$] Carência isenta? (IN 188) ( ) Sim ( ) Não
+    \item[$\square$] Internação $>$ 14 dias? ( ) Sim ( ) Não
+    \item[$\square$] Período prorrogado? ( ) Sim ( ) Não
+\end{itemize}
+
+\textbf{4. AUXÍLIO INCAPACIDADE TEMPORÁRIA}
+\begin{itemize}
+    \item[$\square$] Data do afastamento: \_\_\_\_\_\_
+    \item[$\square$] Média histórica (PBC): R\$ \_\_\_\_\_\_
+    \item[$\square$] Média 12 últimos: R\$ \_\_\_\_\_\_
+    \item[$\square$] SB (MENOR): R\$ \_\_\_\_\_\_
+    \item[$\square$] RMI (91\% do SB): R\$ \_\_\_\_\_\_
+    \item[$\square$] Empresa pagou 15 dias? ( ) Sim ( ) Não
+    \item[$\square$] Perícia agendada para: \_\_\_\_\_\_
+\end{itemize}
+
+\textbf{5. TESES REVISIONAIS APLICÁVEIS (2025-2026)}
+\begin{itemize}
+    \item[$\square$] Pensão: Inclusão menor sob guarda (Lei 15.108)
+    \item[$\square$] Pensão: Deficiente = 100\% (EC 103, Art. 23, \S 2\textsuperscript{o})
+    \item[$\square$] Sal-Mat: Isenção carência (IN 188/2025)
+    \item[$\square$] Sal-Mat: Prorrogação internação (Lei 15.222)
+    \item[$\square$] AIP: Conversão B32 $\rightarrow$ B92 (Nexo Causal)
+\end{itemize}
+\end{acaoImediata}
+
+\section{Resumo do Módulo 7}
+
+\textbf{O Que Você Aprendeu:}
+
+\begin{itemize}
+    \item[\cmark] \textbf{Pensão por Morte:} Regras pré e pós-Reforma, coeficiente por dependentes, Lei 15.108/2025, exceção deficiente = 100\%
+    \item[\cmark] \textbf{Salário-Maternidade:} Cálculo por categoria, IN 188/2025 (zero carência), Lei 15.222/2025 (prorrogação)
+    \item[\cmark] \textbf{Auxílio Temporário:} Subteto, 91\%, armadilhas comuns
+    \item[\cmark] \textbf{Tema 1300 STF:} Tese REJEITADA, estratégia alternativa (nexo causal)
+    \item[\cmark] \textbf{Visão Sistêmica:} Diferenças estruturais, checklist unificado
+\end{itemize}
+
+%% Continua no Módulo 8
+
+%% ============================================================================
+%% INFOGRÁFICO DO MÓDULO 7
+%% ============================================================================
+\clearpage
+\backtotoc
+
+\section*{\faImage\ Infográfico de Consolidação}
+
+\begin{figure}[H]
+    \centering
+    \begin{tcolorbox}[colback=white, colframe=cjpAzulEscuro, title={\textbf{\faBookOpen\ Infográfico: Módulo 7 --- Benefícios Não Programáveis}}, fonttitle=\bfseries\color{white}, sharp corners=downhill, boxrule=2pt]
+        \centering
+        \includegraphics[width=0.95\textwidth, keepaspectratio]{modulo7}
+    \end{tcolorbox}
+    \caption{Resumo Visual do Módulo 7: Benefícios Não Programáveis}
+    \label{fig:modulo7}
+\end{figure}

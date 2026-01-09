@@ -1,0 +1,256 @@
+﻿
+%% Continuação do Módulo 3: Detecção de Erros
+
+\begin{center}
+{\Large\textit{Onde outros veem números, você vê oportunidades.}}\\[0.5cm]
+\textbf{Sistema CJP | Módulo 3}
+\end{center}
+
+\section{Tipos de Salário no CNIS}
+
+\subsection{Salário de Contribuição}
+
+O **Salário de Contribuição** (SC) é a base de cálculo da contribuição previdenciária. Não necessariamente é o salário que o trabalhador recebeu.
+
+**Exemplo:**
+Trabalhador recebe R\$ 10.000,00 (acima do teto).
+Salário de Contribuição: Teto do INSS (R\$ 7.786,02 em 2024).
+
+\textbf{Limite Mínimo e Máximo:}
+- Mínimo: Salário Mínimo Nacional (art. 28, \S 2\textsuperscript{o}, Lei 8.212/91)
+- Máximo: Teto do RGPS
+
+\subsection{Salário de Benefício}
+
+Média aritmética simples dos salários de contribuição, atualizados monetariamente.
+- **Antes da Reforma (EC 103/19):** Média dos 80% maiores salários desde 07/1994.
+- **Depois da Reforma:** Média de 100% dos salários desde 07/1994.
+
+\subsection{Renda Mensal Inicial (RMI)}
+
+Valor inicial do benefício, obtido após aplicar o coeficiente de cálculo sobre o Salário de Benefício.
+
+RMI = SB x Coeficiente
+
+\section{Detecção de Erros Comuns no CNIS}
+
+\subsection{Indicadores de Pendência}
+
+O CNIS possui diversos indicadores (siglas) que apontam pendências ou irregularidades. Ignorá-los é fatal.
+
+\textbf{Exemplos Críticos:}
+
+\begin{itemize}
+    \item **PEXT:** Pendência de Vínculo Extemporâneo (não comprovado).
+    \item **AEXT-VT:** Acerto de Vínculo Extemporâneo indeferido.
+    \item **IREC-LC123:** Recolhimento com alíquota reduzida (5% ou 11%).
+    \item **PREC-M:** Recolhimento abaixo do salário mínimo.
+\end{itemize}
+
+\subsection{Erro 1: Contribuições Abaixo do Mínimo (Pós-Reforma)}
+
+A EC 103/2019 (art. 195, \S 14, CF) vedou o aproveitamento de contribuições abaixo do mínimo para tempo de contribuição e carência.
+
+**Solução:**
+1. **Complementar:** Pagar a diferença (DARF).
+2. **Utilizar Excedente:** Usar valor acima do mínimo de outro mês.
+3. **Agrupar:** Somar contribuições de meses diferentes.
+
+\subsection{Erro 2: Vínculos sem Data Fim (Em Aberto)}
+
+Vínculos sem data de saída não contam para carência e tempo de contribuição após a última remuneração informada.
+
+**Solução:** Apresentar CTPS ou TRCT para encerrar o vínculo no sistema.
+
+\subsection{Erro 3: NIT Duplicado}
+
+Segurado possui mais de um número de inscrição (NIT/PIS/PASEP).
+
+**Consequência:** Períodos de contribuição ficam "espalhados" e o sistema não soma.
+
+**Solução:** Solicitar Unificação de NITs (Elo) pelo 135 ou Meu INSS.
+
+\section{Matriz de Detecção de Erros}
+
+Utilize esta matriz para identificar rapidamente onde focar sua atenção na análise do CNIS.
+
+\begin{table}[H]
+\centering
+\caption{Matriz de Detecção de Erros no CNIS}
+\begin{tabular}{|p{4cm}|p{5cm}|p{5cm}|}
+\hline
+\textbf{Sintoma} & \textbf{Causa Provável} & \textbf{Ação Corretiva} \\
+\hline
+Vínculo não conta tempo & Indicador PEXT ou falta data fim & Comprovar vínculo (CTPS) \\
+\hline
+Valor do benefício baixo & Salários ausentes ou abaixo do mínimo & Inserir salários (Holerites) ou Complementar \\
+\hline
+Tempo total menor & NITs duplicados ou vínculos rurais não averbados & Unificar NITs / Averbar Rural \\
+\hline
+Indicador PREM-EXT & Remuneração extemporânea & Provar valor (Holerites) \\
+\hline
+Contribuição não aparece & GPS paga com código errado & Retificar GPS (Sist. de Acréscimos) \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Checklist Master de Validação}
+
+\begin{itemize}
+    \item[$\square$] Todos os vínculos da Carteira de Trabalho estão no CNIS?
+    \item[$\square$] As datas de início e fim coincidem?
+    \item[$\square$] Existem indicadores de pendência (PEXT, AEXT, etc.)?
+    \item[$\square$] Existem contribuições abaixo do salário mínimo (pós-11/2019)?
+    \item[$\square$] Há NITs duplicados para o mesmo segurado?
+    \item[$\square$] Os salários de contribuição estão corretos (bater com holerites)?
+    \item[$\square$] Tempo especial (PPP) está averbado/convertido?
+    \item[$\square$] Tempo rural está averbado?
+    \item[$\square$] Tempo militar (Certificado Reservista) está averbado?
+    \item[$\square$] Contribuições como autônomo (carnê) estão lançadas?
+\end{itemize}
+
+\section{Fluxograma: Da Análise à Ação}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[node distance=2cm]
+        \node (start) [startstop] {Início: Análise CNIS};
+        \node (pro1) [process, below of=start] {Identificar Pendências};
+        \node (dec1) [decision, below of=pro1, yshift=-1.5cm] {Erro Encontrado?};
+        \node (pro2a) [process, left of=dec1, xshift=-3cm] {Listar Documentos Probatórios};
+        \node (pro2b) [process, right of=dec1, xshift=3cm] {Validar Cálculos};
+        \node (pro3) [process, below of=pro2a] {Protocolar Acerto de Vínculos};
+        \node (end) [startstop, below of=dec1, yshift=-4cm] {CNIS Auditado e Correto};
+
+        \draw [arrow] (start) -- (pro1);
+        \draw [arrow] (pro1) -- (dec1);
+        \draw [arrow] (dec1) -- node[anchor=south] {Sim} (pro2a);
+        \draw [arrow] (dec1) -- node[anchor=south] {Não} (pro2b);
+        \draw [arrow] (pro2a) -- (pro3);
+        \draw [arrow] (pro3) |- (end);
+        \draw [arrow] (pro2b) |- (end);
+    \end{tikzpicture}
+    \caption{Fluxo de Correção de CNIS}
+    \label{fig:fluxo_cnis}
+\end{figure}
+
+\section{Impacto Financeiro da Correção}
+
+Corrigir um erro no CNIS não é apenas "burocracia". É dinheiro no bolso do cliente.
+
+\textbf{Estudo de Caso:}
+- Situação: Vínculo de 5 anos marcado como extemporâneo (não contava).
+- Ação: Advogado apresentou CTPS e ficha de registro.
+- Resultado: +5 anos de tempo. Aposentadoria concedida.
+- Impacto: R\$ 3.500,00 (Benefício) x 13 meses x 20 anos = \textbf{R\$ 910.000,00}.
+
+\begin{quote}
+"O detalhe que você ignora hoje é a fortuna que seu cliente perde amanhã."
+\end{quote}
+
+\section{Fluxograma: Do Diagnóstico à Correção}
+
+\begin{estrategiaCJP}
+\textbf{FLUXOGRAMA: DIAGNÓSTICO E CORREÇÃO DE ERROS NO CNIS}
+
+\textbf{1.TRIAGEM INICIAL}
+$\downarrow$
+Baixar CNIS completo (versão com remunerações)
+$\downarrow$
+Comparar com CTPS e Carnês (GPS)
+
+$\downarrow$
+
+\textbf{2.IDENTIFICAÇÃO DE ERROS}
+\begin{itemize}
+    \item Vínculos sem data fim?
+    \item Indicadores de pendência (PEXT, AEXT, PREC)?
+    \item Salários zerados ou abaixo do mínimo?
+    \item NITs duplicados?
+\end{itemize}
+
+$\downarrow$
+
+\textbf{3.ESTRATÉGIA DE CORREÇÃO}
+Para cada erro, definir a prova:
+\begin{itemize}
+    \item Vínculo: CTPS, Ficha de Registro, Extrato FGTS
+    \item Salário: Holerites, Relação de Salários (RAIS)
+    \item Contribuição: Microfichas, Carnês originais
+\end{itemize}
+
+$\downarrow$
+
+\textbf{4.EXECUÇÃO (ACERTO DE VÍNCULOS)}
+\begin{itemize}
+    \item Protocolar requerimento no Meu INSS ("Atualização de Vínculos e Remunerações")
+    \item Juntar documentos digitalizados
+    \item Acompanhar até a averbação
+\end{itemize}
+
+$\downarrow$
+
+\textbf{RESULTADO:} CNIS "Limpo" e Apto para Cálculo
+\end{estrategiaCJP}
+
+\section{Casos Práticos: 3 Armadilhas em Casos Reais}
+
+\subsection{Caso 1: O "Ex-Empresário" (Indicador IREC-LC123)}
+
+\textbf{Cenário:} João pagou 5 anos como empresário (11%) mas o INSS não contou o tempo.
+\textbf{Problema:} O indicador IREC-LC123 exige complementação se João quiser aposentar por tempo de contribuição (a alíquota de 11% só conta para aposentadoria por idade).
+\textbf{Solução CJP:} Calcular se vale a pena complementar para 20%.
+\begin{itemize}
+    \item Custo da complementação: R\$ 4.000,00
+    \item Ganho na RMI: Recalculo mostrou aumento de R\$ 500/mês.
+    \item ROI: 8 meses. \textbf{Ação: Complementar.}
+\end{itemize}
+
+\subsection{Caso 2: A Doméstica sem FGTS (Indicador PREC-MENOR-MIN)}
+
+\textbf{Cenário:} Maria trabalhou 2 anos como doméstica, mas recolhimentos foram sobre meio salário mínimo.
+\textbf{Problema:} Pós-Reforma, essas contribuições são DESCARTADAS.
+\textbf{Solução CJP:} Agrupar contribuições (art. 29, EC 103).
+\begin{itemize}
+    \item Agrupou competências de 01/2020 e 02/2020.
+    \item Resultado: 1 mês válido (antes eram 0).
+    \item Salvou o tempo de carência necessário.
+\end{itemize}
+
+\subsection{Caso 3: O Vínculo Fantasma (Indicador PEXT)}
+
+\textbf{Cenário:} Carlos tem um vínculo de 1995 com indicador PEXT. CTPS foi perdida em enchente.
+\textbf{Problema:} Sem prova, perde 3 anos de tempo.
+\textbf{Solução CJP:} Busca ativa de provas alternativas.
+\begin{itemize}
+    \item Extrato analítico do FGTS (Caixa).
+    \item Declaração de Imposto de Renda da época.
+    \item Cópia da ficha de registro na Junta Comercial (empresa fechada).
+    \item Prova aceita $\rightarrow$ Aposentadoria concedida.
+\end{itemize}
+
+\section{Mensagem Final do Módulo 3}
+
+Dominar a detecção de erros no CNIS é a base de tudo. Sem um CNIS limpo, qualquer cálculo de RMI (que veremos nos próximos módulos) será PERDA DE TEMPO.
+
+Você agora tem a "visão de raio-x" para encontrar o que o robô do INSS ignora.
+
+No próximo módulo, vamos traduzir esses dados brutos em \textbf{estratégia processual}.
+
+%% ============================================================================
+%% INFOGRÁFICO DO MÓDULO 3
+%% ============================================================================
+\clearpage
+\backtotoc
+
+\section*{\faImage\ Infográfico de Consolidação}
+
+\begin{figure}[H]
+    \centering
+    \begin{tcolorbox}[colback=white, colframe=cjpAzulEscuro, title={\textbf{\faBookOpen\ Infográfico: Módulo 3 --- Detecção de Erros}}, fonttitle=\bfseries\color{white}, sharp corners=downhill, boxrule=2pt]
+        \centering
+        \includegraphics[width=0.95\textwidth, keepaspectratio]{modulo3}
+    \end{tcolorbox}
+    \caption{Resumo Visual do Módulo 3: Detecção de Erros}
+    \label{fig:modulo3}
+\end{figure}
